@@ -1,22 +1,20 @@
-Installation
+安装（店长推荐）
 ============
 
-After these steps you should have a moocng instance up and running but
-please note that many configuration defaults may not be good for your
-installation. It is recommended to read the :doc:`configuration` chapter
-right after this one.
+经过以下步奏之后，你应该可以安装并运行一个moocng实例。但是，需要注意的是，
+很多默认的安装配置可能并不适用于你的平台。推荐在阅读本章后，阅读:doc:`configuration` 。
 
+译者：Yangff ( yangff1@gmail.com )
+请允许我再次吐槽一下店长推荐。
 
-Prerequisites
+运行环境
 -------------
 
-The minimum version of Python needed to run moocng is 2.6.
+运行moocng需要的python版本最小应为 2.6.
 
-In the process of installing moocng, both in the standard installation and
-the development installation, it is necessary that some libraries already
-exist on your system. It is also needed the baseic compiler chaintool and
-the development version of those libraries since the installation process
-compiles a couple of Python modules.
+无论是在生产环境还是开发环境，安装moocng的过程中，都会用到以下这些库，请确保
+他们已经被安装在你的系统中。同时，一些基本的编译工具链，以及这些库的开发版亦
+在安装过程中编译一些python库时被用到。
 
 .. code-block:: bash
 
@@ -27,10 +25,10 @@ compiles a couple of Python modules.
   # Debian/Ubuntu example:
   $ apt-get install build-essential python-dev libpq-dev libjpeg-turbo8-dev libpng12-dev
 
-Installing the web server
+安装 web 服务
 .........................
 
-The packages needed for installing Apache and wsgi support are:
+安装Apache和WSGI支持所需要的软件包：
 
 .. code-block:: bash
 
@@ -41,33 +39,26 @@ The packages needed for installing Apache and wsgi support are:
   $ apt-get install apache2 libapache2-mod-wsgi
 
 .. note::
-  If you use someting different from Apache, please check the documentation
-  of your web server about how to integrate it with a WSGI application.
+  如果你使用一些不同于apache的web服务器，请查阅支持文档中，有关如
+  何使用WSGI应用程序的相关内容。
 
-Creating a virtualenv
+创建虚拟运行环境
 ---------------------
 
-When installing a python application from the source you may put it in your
-system python site-packages directory running the standard
-*python setup.py install* dance but that is not recommended since it will
-pollute your system Python and make upgrades unnecessarily difficult. If
-the python application have some dependencies, as the moocng application has,
-things will become worse since you may have conflicts between the
-dependencies versions needed by the application and the versions installed
-on your system and needed by other applications.
+从源代码安装一个python的应用时，你可以把它们直接放入你系统的python的site-packages
+目录中，并运行 *python setup.py install* 。但是，这会污染系统python并使得升级变得
+困难， 所以我们并不建议你这样做。更糟糕的是，如果这个python应用像moocng有一些依赖
+项，因为两个应用所需要的依赖项版本可能会发生冲突！
 
 .. note::
-  You should always install software using your Linux distribution packages.
-  Python applications are not a exception to this rule. This documentation
-  assumes that there is no moocng package yet in your Linux distribution or
-  it is very out of date.
+  你应该使用Linux的软件包管理器安装软件。
+  Python 的应用并非例外。本文档假定你的linux系统并没有安装过moocng，或者它的版本已
+  经很久了。
 
-For all these reasons it is highly recommended to install the moocng
-application (any as a general rule, any Python application) in its own
-isolated environment. To do so there are a number of tools available. We
-will use *virtualenv* since it is a very popular one.
+由于这些原因，我们强烈建议你将moocng（事实上是任何的python应用）安装在一个专门的环
+境中。有很多工具可以做到这一点，我们使用了广受欢迎的*virtualenv*。
 
-So first we will install virtualenv:
+撒，第一步，我们将安装 virtualenv：
 
 .. code-block:: bash
 
@@ -77,9 +68,8 @@ So first we will install virtualenv:
   # Debian/Ubuntu example:
   $ apt-get install python-virtualenv
 
-In CentOS/RedHat 6 there is no virtualenv package available but we can
-install it with the easy_install command, available in the setuptools
-package:
+在 CentOS/RedHat 6中，并没有可用的virtualenv的软件包><，但是我们可以用
+easy_install命令（由setuptools包亲情赞助）来安装它：
 
 .. code-block:: bash
 
@@ -87,76 +77,73 @@ package:
   $ yum install python-setuptools
   $ easy_install virtualenv
 
-Check your distribution documentation if you do not use neither Fedora nor
-Ubuntu nor CentOS.
+如果你使用的不是Redora、Ubuntu或者CentOS，你可能得寻求相关文档的帮助。
 
-Now a new command called *virtualenv* is available on your system and we
-will use it to create a new virtual environment where we will install moocng.
+现在，一个新的命令，*virtualenv*，已经可以使用了！那么，现在我们就用它来创建
+一个新的虚拟运行环境来安葬我们的moocng。
 
 .. code-block:: bash
 
   $ virtualenv /var/www/moocng --no-site-packages
 
-The *--no-site-packages* option tells virtualenv to not depend on any system
-package. For example, even if you already have Django installed on your
-system it will install another copy inside this virtualenv. This improves
-the reliability by making sure you have the same versions of the
-dependencies that the developers have tested.
+*--no-site-packages* 选项告诉virtualenv不要依赖任何系统包。举个栗子：如果你已经
+在系统中安装了Django。我们也会另外在安装一份在virtualenv里面。
+这样做能过提高不同版本之间以来的可靠性。确保你所使用的版本，和开发者所认定的版本
+一致！
 
 .. note::
-  We are using the system python and not a custom compiled one, which would
-  improve the system isolation, because we are going to deploy the
-  application with Apache and mod_wsgi and they depend on the system python.
+  如果我们要提高隔离程度，不使用系统的python，而自己再编译安装一个python不是更好？
+  因为，我们接下来将部署的应用（Apache，mod_wsgi）将依赖系统的python。
 
-Installing moocng and its dependencies
+安装 moocng 和他的依(xiao)赖(huo)项(ban)们
 --------------------------------------
 
-In this step the moocng software and all its depenencies will get installed
-into the virtualenv that was just created in the previous step.
+在这个步奏中，moocng和他的所有依赖项将会安装到我们刚刚创建的virtualenv中。
 
-We first need to activate the virtualenv:
+第一步，激活 virtualenv:
 
 .. code-block:: bash
 
   $ source /var/www/moocng/bin/activate
 
-This will change the *PATH* and some other environment variables so this
-will take precedence over your regular system python.
+在终端中使用上述命令后将会改变 *PATH* 以及其他一些环境变量，以改变系统
+python的优先顺序（也就是操作都会先考虑虚拟运行环境啦）。
 
-Now we can install the moocng software:
+接着，让我们安装 moocng ：
+看好了，不要998，不要98，只要一步！！
 
 .. code-block:: bash
 
   $ easy_install moocng
 
-After a while you will have a bunch of new packages inside
+接下来，你会在这里面看到一堆新的软件包：
 */var/www/moocng/lib/python2.7/site-packages/*
 
 Tastypie
 ........
 
-Note: If you already have installed the official tastypie you need to execute first:
+Note: 如果你已经安装了官方的Tastypie，你需要先执行:
 
 .. code-block:: bash
 
   pip uninstall django-tastypie
 
 
-Installation steps:
+安装步奏:
 
-1. In the virtualenv directory:
+1. 在虚拟目录中:
 
 .. code-block:: bash
 
   git clone git@github.com:OpenMOOC/django-tastypie.git
 
-2. In the new django-tastypie directory execute:
+2. 在新的 django-tastypie 目录执行:
 
 .. code-block:: bash
 
   python setup.py develop
 
-3. In the moocng directory execute:
+3. 在 moocng 目录执行:
 
 .. code-block:: bash
 
@@ -166,12 +153,12 @@ Installation steps:
 FFmpeg
 ......
 
-FFmpeg is an extra dependence of moocng, and we'll install it through system
-package system. FFmpeg is used to extract the last frame from YouTube's videos.
+FFmpeg是moocng的一个额外依赖项，我们会通过包管理器安装它。FFmpeg是用来从视频源
+中抽取最后一帧（为什么是最后一帧？）
 
-The FFmpeg version to install must have *webm* and *mp4* support. We recommend
-0.11.X version, but it should work with a 0.7.X version or newer. 0.6.X are no
-longer mantained by FFmpeg team and its use is discouraged.
+安装的FFmpeg版本应带有 *webm* and *mp4* 支持. 我们建议使用0.11.X的版本。不过应
+该来说任何版本超过0.7.X的FFmpeg都能使用。0.6.X的版本，FFmpeg的开发人员已经不再
+维护了，而且用起来糟糕透了！
 
 .. code-block:: bash
 
@@ -182,34 +169,31 @@ longer mantained by FFmpeg team and its use is discouraged.
   # Debian/Ubuntu example:
   $ apt-get install ffmpeg
 
-In CentOS/Redhat 6 there are no easy packages for FFmpeg so in this platform it
-is recommended to use a statically compiled ffmpeg binary. You can download it
-from here: http://bit.ly/ZaIPfe
+在可悲的 CentOS/Redhat 6 中……真是非常遗憾，没有FFmpeg静态库的一键安装包，不嫌
+弃的话直接从 http://bit.ly/ZaIPfe 下载好了！（扭）才……才不是为你准备的呢！
+（不编译会死星人不信服）
 
-
-Creating the database
+创建数据库
 ---------------------
 
-The moocng application uses two types of storage:
+moocng使用两种数据库
 
-- A non relational database to store user interactions. Right now only MongoDB
-  is supported.
-- A relational database to store courses and users.
+- 非关系数据库，用于存储用户交互信息，只支持MongoDB。
+- 关系数据库，存储课程和用户信息。
 
-Being a Django project, the moocng application support several different types
-of SQL databases such as Postgresql, Mysql, Sqlite, Oracle, etc.
+作为一个正直的Django项目，moocng支持好多好多不同类型的SQL数据库，
+像： Postgresql, Mysql, Sqlite, Oracle什么什么的……
 
-In this documentation we will cover the installation with a Postgresql
-database because it is the RDMS we recommend. Check the
-`Django documentation`_ to learn how to configure other database backends.
+在这个文档中，我们会介绍搭配Postgresql安装使用，因为这是我们推荐的！
+访问这个`Django documentation`_ 传送门去学习如何使用其他数据库。
 
 .. _`Django documentation`: http://docs.djangoproject.com/
 
 PostgreSQL
 ..........
 
-The first step is to install database server. It is recommended to use the
-packages for your Linux distribution:
+第一步是安装数据库。好吧，他们又在推荐你使用Linux的包了……真不知道那些旧的
+跟【bi——】一样的版本有什么好的。
 
 .. code-block:: bash
 
@@ -219,12 +203,10 @@ packages for your Linux distribution:
   # Debian/Ubuntu example:
   $ apt-get install postgresql postgresql-client
 
-Check your distribution documentation if you do not use neither Fedora nor
-Ubuntu.
+同样，如果你不是这些系统的，看文(xiao)档(huang)去(shu)吧……
 
-Now a database user and the database itself must be created. The easiest way
-to do this is to login as the postgres system user and creating the user
-with that account:
+现在，我们来创建一个数据库账号和一个数据库。
+⑨都能学会的办法就是用postgres的系统用户登陆，然后创建一个用户。
 
 .. code-block:: bash
 
@@ -234,34 +216,31 @@ with that account:
   Enter it again: *****
   $ createdb -E UTF8 --owner=moocng moocng
 
-With the previous commands we have created a database called *moocng* and a
-user, which owns the database, called also *moocng*. When creating the user
-the createuser command ask for a password. You should remember this password
-in a later stage of the installation/configuration process.
+以上命令将会创建一个名叫 *moocng* 的数据库和名字相同的拥有这个数据库的用户。
+创建用户的时候将会向你要一个密码。你得牢记，下面安装和配置过程有用！
 
-Now we need to configure Postgresql to accept database connections from the
-*moocng* user into the *moocng* database. To do so, we need to add the
-following directive in the pg_hba.conf file:
+现在，我们来配置 Postgresql 让它接受由用户 *moocng* 到 数据库 *moocng* 连接的。
+为此，我们需要在 pg_hba.conf 中添加下述配置：
 
 .. code-block:: bash
 
   # TYPE   DATABASE    USER       CIDR-ADDRESS        METHOD
   local    moocng      moocng                         md5
 
-And restart the Postgresql server to reload its configuration:
+然后重启 Postgresql 使他重新加载配置文件。
 
 .. code-block:: bash
 
   $ service postgresql restart
 
 .. note::
-  The location of the pg_hba.conf file depends on your Linux distribution. On
-  Fedora it is located at /var/lib/pgsql/data/pg_hba.conf but in Ubuntu it is
-  located at /etc/postgresql/8.1/main/pg_hba.conf being 8.1 the version of
-  Postgresql you have installed.
+  pg_hba.conf 文件的位置取决于你的Linux包。
+  在 Fedora 中他在 /var/lib/pgsql/data/pg_hba.conf 
+  但是在 Ubuntu 他在/etc/postgresql/8.1/main/pg_hba.conf ， 8.1 是你安装的
+  Postgresql 版本。
 
-To check that everything is correct you should try to connect to the *moocng*
-database using the *moocng* user and the password you assigned to it:
+检验刚才的操作是否正确，你可是尝试用 *moocng* 账号和刚才设定的密码连接到
+ *moocng* 数据库：
 
 .. code-block:: bash
 
@@ -281,10 +260,10 @@ database using the *moocng* user and the password you assigned to it:
 MongoDB
 .......
 
-For CentOS or Fedora we need to add a new repository to the system, so we must
-create the ``/etc/yum.repos.d/10gen.repo`` file.
+对于CentOS和Fedora，我们需要给yum添加一个软件仓库。
+创建``/etc/yum.repos.d/10gen.repo`` 文件。
 
-Then, edit it and add this content:
+然后往里面写：
 
 .. code-block:: text
 
@@ -294,25 +273,25 @@ Then, edit it and add this content:
     gpgcheck=0
     enabled=1
 
-After adding the repo we only have to install the packages:
+然后这样就可以安装我们的软件包了：
 
 .. code-block:: bash
 
     yum install mongo-10gen mongo-10gen-server
 
-For Debian based distributions there are guides that can be found at
+Debian用户下面的传送门请：
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-debian-or-ubuntu-linux/
 
-Creating the database schema
+妈蛋，Ubuntu呢？
+
+创建数据库结构
 ----------------------------
 
-Now we have to create the database tables needed by moocng but before we need
-to configure it to tell the database parameters needed to connect to the
-database. This will be described with more deails in the :doc:`configuration`
-chapter.
+现在，我们得创建moocng的数据表。但是在此之前我们得变配置一些参数来告诉程序如何
+正确连接到数据库。在 :doc:`configuration` 一章中我们将详细叙述这些内容。
 
-Add the following information into the
-*/var/www/moocng/lib/python2.7/site-packages/moocng-X.Y.Z-py2.7.egg/moocng/local_settings.py* file:
+往 */var/www/moocng/lib/python2.7/site-packages/moocng-X.Y.Z-py2.7.egg/moocng/local_settings.py* 中
+添加下述内容：
 
 .. code-block:: python
 
@@ -327,44 +306,39 @@ Add the following information into the
      }
  }
 
-Fill this dictionary with the appropiate values for your database
-installation, as performed in the previous step.
+按照之前的安装过程，往代码相应位置填写正确的值。
 
 .. note::
-  The location of the *local_settings.py* file depends on the moocng version
-  that you have. The path fragment :file:`moocng-X.Y.Z-py2.7` is ficticious and
-  will be something like |full_release_name| in real life.
+  *local_settings.py* 文件的地址取决于你安装的的 moocng 版本
+  上面地址中的 :file:`moocng-X.Y.Z-py2.7` 代表一个虚拟的版本（X.Y.Z，py2.7）
+  实际上他应该长成这样：|full_release_name|。
 
-Then, activate the virtualenv:
+然后，再次激活我们的virtualenv：
 
 .. code-block:: bash
 
   $ source /var/www/moocng/bin/activate
 
-And run the Django syncdb command to create the database schema:
+然后运行Django syncdb命令来创建数据库结构。
 
 .. code-block:: bash
 
   $ django-admin.py syncdb --settings=moocng.settings --migrate
 
 .. note::
-  The syncdb Django command will ask you if you want to create an admin
-  user. You should answer yes to that question and write this admin's
-  username and password down. You will need them later. This administrator's
-  name should be `admin` because there are fixtures that depends on this
-  name. You can create more administrators in the future with other names.
+  syncdb Django命令会询问你是否要创建一个管理员用户。请回答“是”，并写下你要
+  的管理员账号和密码。等下你需要他们。
+  非常扯蛋的一点是，管理员名字应该叫做“admin”，因为这是表明这是管理员的标志
+  之后你可以用别的名字创建更多的鹳狸猿？
 
 
-Installing the message broker
+安装 message broker
 -----------------------------
 
-moocng uses a message queu to process the videos. You can use several
-different message broker for handling the message queue but RabbitMQ is
-the recommended option because it is easy to setup and has very good
-performance.
+moocng 使用消息队列来处理视频（为啥），你可以使用很多不用的消息代理来
+处理消息队列，不过，我们推荐使用RabbitMQ，因为他安装简单，使用起来也很棒。
 
-So, first we need to install the RabbitMQ packages for your operating
-system:
+嘛嘛，第一步，我们需要在系统安装RabbitMQ：
 
 .. code-block:: bash
 
@@ -381,8 +355,9 @@ system:
   $ yum install erlang
   $ yum install rabbitmq-server
 
-A RabbitMQ user and a virtual host need to be created. Then the user
-needs to have permissions to access to that virtual host:
+然后创建一个RabbitMQ用户和一个vitrual host（注，这里说的vitrual host并不是
+虚拟主机，仅仅是一个表示用的命名空间，但是我不知道该翻译成什么）。然后，给这个
+用户访问vitrual host的权限。
 
 .. code-block:: bash
 
@@ -391,65 +366,60 @@ needs to have permissions to access to that virtual host:
   $ rabbitmqctl add_vhost moocng
   $ rabbitmqctl set_permissions -p moocng moocng ".*" ".*" ".*"
 
-Installing Celery's service script
+安装 Celery 的服务脚本
 ..................................
 
-Celery is installed with moocng, but we need to create a service script to
-control its execution.
+Celery 已经伴随着 moocng 安装了，但是我们要创建一个服务脚本来控制它的执行：
 
 .. code-block:: bash
 
     $ cp /var/www/moocng/moocng/celeryd /etc/init.d/
     $ chmod +x /etc/init.d/celeryd
 
-With these two commands we'll have the needed service script.
+执行以上两行代码就好了。
 
-Collecting static files
+搜集静态文件
 -----------------------
 
-TODO: this should go to the configuration chapter as it depends on
-a settings option
+TODO: 这些内容应该转移到configuration一节，因为他依赖设置选项。
 
-In this step you will collect all necessary static resources needed by
-moocng and put them in a single directory so you can serve them directly
-through your web server increasing the efficiency of the whole system.
+在这个步奏中我们将会手机所有需要的静态资源，并把它们放到一个文件夹中。
+这样你就可以直接通过你的web服务器来提供他们，提高系统执行效率。
 
-The nice thing is that you don't have to do this manually. There is a
-Django command just for that:
+不过，不用担心，这个浩大的工程不需要你手工完成，Django早就准备好了一个命令，
+只需要你……
 
 .. code-block:: bash
 
   $ django-admin.py collectstatic --settings=moocng.settings
 
- You have requested to collect static files at the destination
- location as specified in your settings file.
+你得把你收集静态文件的目录写入你的设置文件中。
 
- This will overwrite existing files.
- Are you sure you want to do this?
+ 这个操作会会覆盖现有文件。
+ 确定继续吗？
+ 键入'yes'以继续，或者'no'取消，选'yes'
 
- Type 'yes' to continue, or 'no' to cancel: yes
-
-Development Installation
+开发环境安装
 ------------------------
 
-The development installation is very similar to the standard installation. The
-only difference is that instead of installing moocng with easy_install you
-clone the git repository and then install it manually.
+开发环境安装和生产环境安装非常类似，唯一的不同之处在于，将上面安装
+ moocng 的步奏换掉，不使用easy_install，而是使用git克隆现有版本，然
+ 后手动安装。
 
-So, first you clone the repository:
+第一步，clone代码库：
 
 .. code-block:: bash
 
   $ cd /var/www/moocng
   $ git clone git://github.com/OpenMOOC/moocng.git
 
-Then you activate the virtualenv if you have not already done so:
+然后激活virtualenv（如果你刚才没有的话）：
 
 .. code-block:: bash
 
   $ source /var/www/moocng/bin/activate
 
-Finally, you install the moocng package in development mode:
+最后，用开发模式安装。
 
 .. code-block:: bash
 
