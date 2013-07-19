@@ -5,6 +5,7 @@
 很多默认的安装配置可能并不适用于你的平台。推荐在阅读本章后，阅读:doc:`configuration` 。
 
 译者：Yangff ( yangff1@gmail.com )
+
 请允许我再次吐槽一下店长推荐。
 
 运行环境
@@ -110,6 +111,7 @@ easy_install命令（由setuptools包亲情赞助）来安装它：
 python的优先顺序（也就是操作都会先考虑虚拟运行环境啦）。
 
 接着，让我们安装 moocng ：
+
 看好了，不要998，不要98，只要一步！！
 
 .. code-block:: bash
@@ -185,6 +187,7 @@ moocng使用两种数据库
 像： Postgresql, Mysql, Sqlite, Oracle什么什么的……
 
 在这个文档中，我们会介绍搭配Postgresql安装使用，因为这是我们推荐的！
+
 访问这个`Django documentation`_ 传送门去学习如何使用其他数据库。
 
 .. _`Django documentation`: http://docs.djangoproject.com/
@@ -206,6 +209,7 @@ PostgreSQL
 同样，如果你不是这些系统的，看文(xiao)档(huang)去(shu)吧……
 
 现在，我们来创建一个数据库账号和一个数据库。
+
 ⑨都能学会的办法就是用postgres的系统用户登陆，然后创建一个用户。
 
 .. code-block:: bash
@@ -217,9 +221,11 @@ PostgreSQL
   $ createdb -E UTF8 --owner=moocng moocng
 
 以上命令将会创建一个名叫 *moocng* 的数据库和名字相同的拥有这个数据库的用户。
+
 创建用户的时候将会向你要一个密码。你得牢记，下面安装和配置过程有用！
 
 现在，我们来配置 Postgresql 让它接受由用户 *moocng* 到 数据库 *moocng* 连接的。
+
 为此，我们需要在 pg_hba.conf 中添加下述配置：
 
 .. code-block:: bash
@@ -235,12 +241,14 @@ PostgreSQL
 
 .. note::
   pg_hba.conf 文件的位置取决于你的Linux包。
+
   在 Fedora 中他在 /var/lib/pgsql/data/pg_hba.conf 
+
   但是在 Ubuntu 他在/etc/postgresql/8.1/main/pg_hba.conf ， 8.1 是你安装的
   Postgresql 版本。
 
-检验刚才的操作是否正确，你可是尝试用 *moocng* 账号和刚才设定的密码连接到
- *moocng* 数据库：
+
+检验刚才的操作是否正确，你可是尝试用 *moocng* 账号和刚才设定的密码连接到 *moocng* 数据库：
 
 .. code-block:: bash
 
@@ -252,10 +260,9 @@ PostgreSQL
   moocng=#
 
 .. note::
-  We have deliberately keep this postgresql installation super simple since
-  we want to focus in the moocng software. If you are serious about puting
-  this into production you may consider checking other Postgresql
-  configuration settings to improve its performance and security.
+  请注意，我们在努力保持postgresql安装步奏超级简单，因为我们希望将注意力集中在
+  moocng的安装上。如果你是认真的想将他投入生产环境中去使用，你应当好好检查一下
+  Postgresql的其他配置，以改善其安全性和效率。
 
 MongoDB
 .......
@@ -396,15 +403,18 @@ TODO: 这些内容应该转移到configuration一节，因为他依赖设置选�
 你得把你收集静态文件的目录写入你的设置文件中。
 
  这个操作会会覆盖现有文件。
+ 
  确定继续吗？
+ 
  键入'yes'以继续，或者'no'取消，选'yes'
+ 
 
 开发环境安装
 ------------------------
 
 开发环境安装和生产环境安装非常类似，唯一的不同之处在于，将上面安装
- moocng 的步奏换掉，不使用easy_install，而是使用git克隆现有版本，然
- 后手动安装。
+moocng 的步奏换掉，不使用easy_install，而是使用git克隆现有版本，然
+后手动安装。
 
 第一步，clone代码库：
 
