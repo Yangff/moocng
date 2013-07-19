@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Yangff <yangff1@gmail.com>\n"
+"Language-Team: \n"
+
+#: static/js/ajax.js:35
+msgid "Error"
+msgstr ""
+
+#: static/js/ajax.js:37
+msgid "Unknown error with ajax petition"
+msgstr ""
+
+#: static/js/ajax.js:42
+msgid "error"
+msgstr ""
+
+#: static/js/progress-views.js:81
+#: static/js/progress-views.js.c:86
+msgid "completed"
+msgstr ""
+
+#: static/js/progress-views.js:82
+#: static/js/progress-views.js.c:90
+#: static/js/progress-views.js:178
+msgid "correct"
+msgstr ""
+
+#: static/js/progress-views.js:152
+msgid "This score will not be applied to your final score until you get the minimum number of reviews"
+msgstr ""
+
+#: static/js/progress-views.js:170
+msgid "pending"
+msgstr ""
+
+#: static/js/progress-views.js:180
+msgid "incorrect"
+msgstr ""
+
+#: static/js/progress-views.js:210
+msgid "Reviews of your submission"
+msgstr ""
+
+#: static/js/progress-views.js:213
+msgid "Date"
+msgstr ""
+
+#: static/js/progress-views.js:214
+msgid "Score"
+msgstr ""
+
+#: static/js/progress-views.js:219
+msgid "You have not received any review yet"
+msgstr ""
+
+#: static/js/progress-views.js:223
+msgid "You have sent %(sent_reviews)s reviews of the %(mandatory_reviews)s mandatory reviews."
+msgstr ""
+
+#: static/js/progress-views.js:230
+msgid "Do more reviews"
+msgstr ""
+
+#: static/js/progress-views.js:283
+msgid "View details"
+msgstr ""
+
+#: static/js/routes.js:81
+msgid "The module is not ready"
+msgstr ""
+
+#: static/js/routes.js:82
+msgid "This module has no nuggets. Probably the start date hasn't been reached yet."
+msgstr ""
+
