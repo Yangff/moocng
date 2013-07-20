@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Moocng-cn\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Yangff <yangff1@gmail.com>\n"
+"Last-Translator: Yangff <yangff1@gmail.com>\n Viztor <viztor@outlook.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2001,7 +2001,7 @@ msgstr ""
 #: teacheradmin/views.py:437
 #: teacheradmin/views.py:476
 msgid "Your changes were saved."
-msgstr ""
+msgstr "改动已保存"
 
 #: teacheradmin/views.py:442
 #: teacheradmin/views.py:468
@@ -2011,28 +2011,28 @@ msgstr ""
 #: teacheradmin/views.py:607
 #: teacheradmin/views.py:649
 msgid "The email has been queued, and it will be send in batches to every student in the course."
-msgstr ""
+msgstr "邮件已在队列中，会分批发送给参与课程的学员"
 
 #: teacheradmin/templates/teacheradmin/announcement_edit.html:15
 #: teacheradmin/templates/teacheradmin/asset_edit.html:18
 msgid "Save changes"
-msgstr ""
+msgstr "保存改动"
 
 #: teacheradmin/templates/teacheradmin/announcement_edit.html:17
 msgid "Create announcement"
-msgstr ""
+msgstr "创建通告"
 
 #: teacheradmin/templates/teacheradmin/announcement_view.html:12
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: teacheradmin/templates/teacheradmin/announcements.html:28
 msgid "There isn't announcements yet"
-msgstr ""
+msgstr "目前没有通告"
 
 #: teacheradmin/templates/teacheradmin/announcements.html:32
 msgid "Add announcement"
-msgstr ""
+msgstr "添加通告"
 
 #: teacheradmin/templates/teacheradmin/asset_edit.html:12
 msgid "Please take into account than this change will affect all courses which use this asset"
@@ -2040,15 +2040,15 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/assets.html:25
 msgid "There are not assets yet"
-msgstr ""
+msgstr "暂无资源"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:12
 msgid "Course edition"
-msgstr ""
+msgstr "课程版本"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:15
 msgid "Units"
-msgstr ""
+msgstr "单元"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:19
 msgid "Extra"
@@ -2056,30 +2056,30 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:20
 msgid "Statistics"
-msgstr ""
+msgstr "统计"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:21
 msgid "Send mail"
-msgstr ""
+msgstr "发送邮件"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:28
 msgid "We are sorry"
-msgstr ""
+msgstr "对不起"
 
 #: teacheradmin/templates/teacheradmin/base_teacheradmin.html:29
 msgid "But this section is not available yet."
-msgstr ""
+msgstr "此分部不可用"
 
 #: teacheradmin/templates/teacheradmin/categories.html:28
 #: teacheradmin/templates/teacheradmin/info.html:153
 #: teacheradmin/templates/teacheradmin/units.html:124
 #: teacheradmin/templates/teacheradmin/units.html:349
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: teacheradmin/templates/teacheradmin/categories.html:33
 msgid "There aren't categories defined yet, please contact an administrator."
-msgstr ""
+msgstr "分类未定义，请联系管理员"
 
 #: teacheradmin/templates/teacheradmin/email_invitation_teacher.txt:3
 #, python-format
@@ -2093,6 +2093,14 @@ msgid ""
 "\n"
 "Best regards, %(site)s's team\n"
 msgstr ""
+"\n"
+"您好，\n"
+"\n"
+"您已经被%(host)s邀请成为 \"%(course)s\" 的讲师。 在完成注册后，您会自动作为讲师加入课程\n"
+"\n"
+"您可以在这里注册: %(register)s\n"
+"\n"
+"最萌的祝愿, %(site)s团队\n"
 
 #: teacheradmin/templates/teacheradmin/email_remove_teacher.txt:3
 #, python-format
@@ -2104,14 +2112,20 @@ msgid ""
 "\n"
 "Best regards, %(site)s's team\n"
 msgstr ""
+"\n"
+"您好，\n"
+"\n"
+"您已经被 %(host)s从 \"%(course)s\"的教师列表中移除。\n"
+"\n"
+"此致， %(site)s团队\n"
 
 #: teacheradmin/templates/teacheradmin/emails.html:34
 msgid "Send an email to every student"
-msgstr ""
+msgstr "给每位学员"
 
 #: teacheradmin/templates/teacheradmin/emails.html:36
 msgid "Be aware!"
-msgstr ""
+msgstr "小心"
 
 #: teacheradmin/templates/teacheradmin/emails.html:37
 #, python-format
@@ -2120,11 +2134,11 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/emails.html:52
 msgid "Previous emails"
-msgstr ""
+msgstr "上封邮件"
 
 #: teacheradmin/templates/teacheradmin/emails.html:57
 msgid "There aren't massive emails sent yet."
-msgstr ""
+msgstr "暂无群发邮件"
 
 #: teacheradmin/templates/teacheradmin/emails.html:67
 msgid "Sent at"
@@ -2134,112 +2148,112 @@ msgstr ""
 #: teacheradmin/templates/teacheradmin/units.html:154
 #: teacheradmin/templates/teacheradmin/units.html:259
 msgid "Content id or url"
-msgstr ""
+msgstr "内容ID或地址"
 
 #: teacheradmin/templates/teacheradmin/question.html:123
 #: teacheradmin/templates/teacheradmin/units.html:33
 msgid "Go back"
-msgstr ""
+msgstr "返回"
 
 #: teacheradmin/templates/teacheradmin/stats.html:29
 msgid "Enrolled"
-msgstr ""
+msgstr "已参与"
 
 #: teacheradmin/templates/teacheradmin/stats.html:30
 msgid "Started"
-msgstr ""
+msgstr "已开始"
 
 #: teacheradmin/templates/teacheradmin/stats.html:31
 msgid "Completed"
-msgstr ""
+msgstr "已完成"
 
 #: teacheradmin/templates/teacheradmin/stats.html:32
 msgid "Passed"
-msgstr ""
+msgstr "已通过"
 
 #: teacheradmin/templates/teacheradmin/stats.html:33
 msgid "Reviewed"
-msgstr ""
+msgstr "已评价"
 
 #: teacheradmin/templates/teacheradmin/stats.html:34
 msgid "Not started"
-msgstr ""
+msgstr "未开始"
 
 #: teacheradmin/templates/teacheradmin/stats.html:35
 msgid "Incompleted"
-msgstr ""
+msgstr "未完成"
 
 #: teacheradmin/templates/teacheradmin/stats.html:36
 msgid "Not passed"
-msgstr ""
+msgstr "未通过"
 
 #: teacheradmin/templates/teacheradmin/stats.html:37
 msgid "Students evolution"
-msgstr ""
+msgstr "学员评价"
 
 #: teacheradmin/templates/teacheradmin/stats.html:38
 msgid "Viewed"
-msgstr ""
+msgstr "已阅"
 
 #: teacheradmin/templates/teacheradmin/stats.html:39
 msgid "Submitted"
-msgstr ""
+msgstr "已提交"
 
 #: teacheradmin/templates/teacheradmin/stats.html:40
 msgid "Not submitted"
-msgstr ""
+msgstr "未提交"
 
 #: teacheradmin/templates/teacheradmin/stats.html:53
 msgid "General statistics of the course"
-msgstr ""
+msgstr "课程的总体评价"
 
 #: teacheradmin/templates/teacheradmin/stats.html:54
 #: teacheradmin/templates/teacheradmin/stats.html:96
 #: teacheradmin/templates/teacheradmin/stats.html:135
 msgid "Students that have..."
-msgstr ""
+msgstr "学员..."
 
 #: teacheradmin/templates/teacheradmin/stats.html:57
 msgid "...started the course"
-msgstr ""
+msgstr "...开始了本课程"
 
 #: teacheradmin/templates/teacheradmin/stats.html:61
 msgid "...completed the course"
-msgstr ""
+msgstr "...完成了本课程"
 
 #: teacheradmin/templates/teacheradmin/stats.html:65
 msgid "...passed the course"
-msgstr ""
+msgstr "...通过了本课程"
 
 #: teacheradmin/templates/teacheradmin/stats.html:69
 #: teacheradmin/templates/teacheradmin/stats.html:107
 #: teacheradmin/templates/teacheradmin/stats.html:146
 msgid "Students evolution..."
-msgstr ""
+msgstr "学员评价..."
 
 #: teacheradmin/templates/teacheradmin/stats.html:72
 msgid "...in general"
-msgstr ""
+msgstr "总体上..."
 
 #: teacheradmin/templates/teacheradmin/stats.html:78
 msgid "...per unit"
-msgstr ""
+msgstr "...每单元"
 
 #: teacheradmin/templates/teacheradmin/stats.html:81
 msgid "All units"
-msgstr ""
+msgstr "全部单元"
 
 #: teacheradmin/templates/teacheradmin/stats.html:99
 msgid "...completed the unit"
-msgstr ""
+msgstr "...完成单元"
 
 #: teacheradmin/templates/teacheradmin/stats.html:103
 msgid "...passed the unit"
-msgstr ""
+msgstr "...通过单元"
 
 #: teacheradmin/templates/teacheradmin/stats.html:110
 msgid "...in the unit"
-msgstr ""
+msgstr "...在单元中"
 
 #: teacheradmin/templates/teacheradmin/stats.html:116
 msgid "...per nugget"
@@ -2251,34 +2265,34 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/stats.html:138
 msgid "...submitted the exercise"
-msgstr ""
+msgstr "……提交测验"
 
 #: teacheradmin/templates/teacheradmin/stats.html:142
 msgid "...passed the exercise"
-msgstr ""
+msgstr "……通过测验"
 
 #: teacheradmin/templates/teacheradmin/stats.html:149
 msgid "...in the exercise"
-msgstr ""
+msgstr "……在测验中"
 
 #: teacheradmin/templates/teacheradmin/stats.html:152
 msgid "Total reviews sent by the students"
-msgstr ""
+msgstr "学生们发回的反馈总数"
 
 #: teacheradmin/templates/teacheradmin/stats.html:163
 #: teacheradmin/templates/teacheradmin/teachers.html:50
 #: teacheradmin/templates/teacheradmin/units.html:379
 msgid "Something went wrong, please try again later."
-msgstr ""
+msgstr "出错了，等会再试试吧~"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:17
 msgid "Pending"
-msgstr ""
+msgstr "挂起"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:18
 #: teacheradmin/templates/teacheradmin/teachers.html:63
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:29
 #: teacheradmin/templates/teacheradmin/teachers.html:33
@@ -2286,11 +2300,11 @@ msgstr ""
 #: teacheradmin/templates/teacheradmin/units.html:370
 #: teacheradmin/templates/teacheradmin/units.html:374
 msgid "Success"
-msgstr ""
+msgstr "成功"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:30
 msgid "The teacher has been added to the course or invited."
-msgstr ""
+msgstr "这位老师已经（被邀请）加入这个课程"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:34
 msgid "The teacher has been removed from the course."
@@ -2302,7 +2316,7 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/teachers.html:42
 msgid "That teacher doesn't exists. Please, introduce a valid user or an email."
-msgstr ""
+msgstr "这位讲师不存在，请使用有效的用户或者邮箱"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:46
 msgid "The email introduced has already received an invitation."
@@ -2310,7 +2324,7 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/teachers.html:53
 msgid "Current teachers"
-msgstr ""
+msgstr "目前讲师"
 
 #: teacheradmin/templates/teacheradmin/teachers.html:66
 msgid "Transfer ownership"
@@ -2318,23 +2332,23 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/teachers.html:81
 msgid "Invited teachers who are not registered yet"
-msgstr ""
+msgstr "未处理邀请的讲师"
 
 #: teacheradmin/templates/teacheradmin/units.html:30
 msgid "Nothing"
-msgstr ""
+msgstr "没有东西"
 
 #: teacheradmin/templates/teacheradmin/units.html:31
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: teacheradmin/templates/teacheradmin/units.html:34
 msgid "This course is empty"
-msgstr ""
+msgstr "此课程为空"
 
 #: teacheradmin/templates/teacheradmin/units.html:35
 msgid "You need to add content to this course. Please, start adding a unit."
-msgstr ""
+msgstr "您需要给这个课程添加一些内容，就从一个单元开始吧~"
 
 #: teacheradmin/templates/teacheradmin/units.html:46
 msgid "Instructor comments"
@@ -2347,7 +2361,7 @@ msgstr ""
 #: teacheradmin/templates/teacheradmin/units.html:51
 #: teacheradmin/templates/teacheradmin/units.html:136
 msgid "Peer review"
-msgstr ""
+msgstr "同行评议"
 
 #: teacheradmin/templates/teacheradmin/units.html:53
 #: teacheradmin/templates/teacheradmin/units.html:137
@@ -2357,15 +2371,15 @@ msgstr ""
 #: teacheradmin/templates/teacheradmin/units.html:57
 #: teacheradmin/templates/teacheradmin/units.html:62
 msgid "Description:"
-msgstr ""
+msgstr "描述"
 
 #: teacheradmin/templates/teacheradmin/units.html:58
 msgid "Remove criterion"
-msgstr ""
+msgstr "删除标准"
 
 #: teacheradmin/templates/teacheradmin/units.html:59
 msgid "Title:"
-msgstr ""
+msgstr "标题"
 
 #: teacheradmin/templates/teacheradmin/units.html:63
 msgid "Remove Asset"
@@ -2373,7 +2387,7 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:64
 msgid "Name:"
-msgstr ""
+msgstr "名称"
 
 #: teacheradmin/templates/teacheradmin/units.html:65
 msgid "Add an asset:"
@@ -2382,11 +2396,11 @@ msgstr ""
 #: teacheradmin/templates/teacheradmin/units.html:125
 #: teacheradmin/templates/teacheradmin/units.html:350
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: teacheradmin/templates/teacheradmin/units.html:134
 msgid "Attachments"
-msgstr ""
+msgstr "附件"
 
 #: teacheradmin/templates/teacheradmin/units.html:177
 msgid "Save changes and add a question to this nugget"
@@ -2403,15 +2417,15 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:207
 msgid "File name"
-msgstr ""
+msgstr "文件名"
 
 #: teacheradmin/templates/teacheradmin/units.html:211
 msgid "There are no attachments yet."
-msgstr ""
+msgstr "目前没有附件"
 
 #: teacheradmin/templates/teacheradmin/units.html:216
 msgid "Question's background"
-msgstr ""
+msgstr "知识背景"
 
 #: teacheradmin/templates/teacheradmin/units.html:218
 #: teacheradmin/templates/teacheradmin/units.html:219
@@ -2446,7 +2460,7 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:228
 msgid "Use the last frame"
-msgstr ""
+msgstr "使用上个框架"
 
 #: teacheradmin/templates/teacheradmin/units.html:240
 msgid "Question's solution"
@@ -2470,23 +2484,23 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:281
 msgid "Assignment description"
-msgstr ""
+msgstr "任务描述"
 
 #: teacheradmin/templates/teacheradmin/units.html:285
 msgid "Minimun reviewers"
-msgstr ""
+msgstr "最少评论人数"
 
 #: teacheradmin/templates/teacheradmin/units.html:293
 msgid "Evaluation criterions"
-msgstr ""
+msgstr "评判标准"
 
 #: teacheradmin/templates/teacheradmin/units.html:298
 msgid "Save changes and add an evaluation criterion"
-msgstr ""
+msgstr "保存改动并增加评判标准"
 
 #: teacheradmin/templates/teacheradmin/units.html:306
 msgid "Remove the peer review assignment"
-msgstr ""
+msgstr "删除这个同行评议作业"
 
 #: teacheradmin/templates/teacheradmin/units.html:315
 msgid "Available from:"
@@ -2506,15 +2520,15 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:371
 msgid "The changes were saved successfully."
-msgstr ""
+msgstr "改动已成功保存"
 
 #: teacheradmin/templates/teacheradmin/units.html:375
 msgid "A task for processing the video has been queued. Refresh in a few moments."
-msgstr ""
+msgstr "处理此视频的任务已处在队列之中。几分钟后回来刷新看看吧~"
 
 #: teacheradmin/templates/teacheradmin/units.html:383
 msgid "A required field is empty."
-msgstr ""
+msgstr "有必填项为空。"
 
 #: teacheradmin/templates/teacheradmin/units.html:391
 msgid "This item is new and must be saved before going back."
@@ -2522,44 +2536,44 @@ msgstr ""
 
 #: teacheradmin/templates/teacheradmin/units.html:397
 msgid "Confirm removal"
-msgstr ""
+msgstr "确认移除"
 
 #: teacheradmin/templates/teacheradmin/units.html:400
 msgid "Are you completely sure you want to remove this? You cannot undo this action."
-msgstr ""
+msgstr "您真的要删除这货么？你无法撤销哦。"
 
 #: teacheradmin/templates/teacheradmin/units.html:412
 msgid "Confirm operation"
-msgstr ""
+msgstr "确认操作"
 
 #: teacheradmin/templates/teacheradmin/units.html:415
 msgid "Are you completely sure you want to do this operation? It is possible that some reservations are cancelled after this change "
-msgstr ""
+msgstr "您真的要执行这个操作么？别后悔哟。"
 
 #: templates/403.html:19
 msgid "Access denied"
-msgstr ""
+msgstr "访问被拒绝"
 
 #: templates/403.html:21
 msgid "We're sorry, but you are not authorized to view this page."
-msgstr ""
+msgstr "很抱歉，您无权访问这个页面"
 
 #: templates/404.html:5
 #: templates/404.html.py:19
 msgid "Page not found"
-msgstr ""
+msgstr "无法找到页面"
 
 #: templates/404.html:21
 msgid "We're sorry, but the requested page could not be found."
-msgstr ""
+msgstr "很抱歉，您所请求的页面无法找到"
 
 #: templates/base.html:53
 msgid "Register"
-msgstr ""
+msgstr "注册"
 
 #: templates/base.html:54
 msgid "Log in"
-msgstr ""
+msgstr "登入"
 
 #: templates/base.html:62
 msgid "Methodology"
@@ -2567,15 +2581,15 @@ msgstr ""
 
 #: templates/base.html:80
 msgid "Legal"
-msgstr ""
+msgstr "法律 "
 
 #: templates/base.html:81
 msgid "All rights reserved"
-msgstr ""
+msgstr "保留所有权利"
 
 #: templates/base.html:83
 msgid "Terms of Use"
-msgstr ""
+msgstr "使用条款"
 
 #: templates/admin/base_site.html:4
 msgid "moocng site admin"
